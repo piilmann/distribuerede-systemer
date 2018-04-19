@@ -3,6 +3,7 @@ import brugerautorisation.data.Bruger;
 import brugerautorisation.server.Brugerdatabase;
 import brugerautorisation.server.SendMail;
 import java.rmi.server.UnicastRemoteObject;
+import javax.mail.MessagingException;
 
 public class BrugeradminImpl extends UnicastRemoteObject implements Brugeradmin
 {
@@ -19,7 +20,12 @@ public class BrugeradminImpl extends UnicastRemoteObject implements Brugeradmin
 
 	@Override
 	public Bruger ændrAdgangskode(String brugernavn, String glAdgangskode, String nyAdgangskode) {
-    return db.ændrAdgangskode(brugernavn, glAdgangskode, nyAdgangskode);
+		Bruger b = db.hentBruger(brugernavn, glAdgangskode);
+    if (nyAdgangskode.isEmpty()) throw new IllegalArgumentException("Tom adgangskode");
+    if (nyAdgangskode.contains("\"") || nyAdgangskode.contains("'")) throw new IllegalArgumentException("Ugyldige tegn i adgangskoden");
+		b.adgangskode = nyAdgangskode;
+		db.gemTilFil(false);
+		return b;
 	}
 
 	@Override
@@ -27,7 +33,7 @@ public class BrugeradminImpl extends UnicastRemoteObject implements Brugeradmin
 		Bruger b = db.hentBruger(brugernavn, adgangskode);
 		try {
 			SendMail.sendMail("DIST: "+emne, tekst, b.email);
-		} catch (Exception ex) {
+		} catch (MessagingException ex) {
 			ex.printStackTrace();
 			throw new IllegalStateException("fejl", ex);
 		}
@@ -42,7 +48,7 @@ public class BrugeradminImpl extends UnicastRemoteObject implements Brugeradmin
 					+(b.sidstAktiv>0?"":"\n\nDu skal skifte adgangskoden for at bekræfte at du følger kurset.\nSe hvordan på https://goo.gl/26pBG9 \n")
 					+"\n"+supplerendeTekst,
 					b.email);
-		} catch (Exception ex) {
+		} catch (MessagingException ex) {
 			ex.printStackTrace();
 			throw new IllegalStateException("fejl", ex);
 		}

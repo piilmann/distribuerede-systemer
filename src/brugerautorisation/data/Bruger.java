@@ -19,6 +19,6 @@ public class Bruger implements Serializable
 
 	public String toString()
 	{
-		return brugernavn+"/"+adgangskode;
+		return email;
 	}
 }

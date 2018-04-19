@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.7
+Created-By: 1.8.0_77-b03 (Oracle Corporation)
+Class-Path: lib/mysql-connector-java-5.1.23-bin.jar lib/javax.ws.rs-ap
+ i-2.0.jar lib/jaxb-impl.jar lib/jaxb-xjc.jar lib/FastInfoset.jar lib/
+ gmbal-api-only.jar lib/ha-api.jar lib/javax.mail_1.4.jar lib/jaxws-rt
+ .jar lib/jaxws-tools.jar lib/management-api.jar lib/mimepull.jar lib/
+ policy.jar lib/saaj-impl.jar lib/stax-ex.jar lib/stax2-api.jar lib/st
+ reambuffer.jar lib/woodstox-core-asl.jar lib/jaxws-api.jar lib/jsr181
+ -api.jar lib/javax.annotation.jar lib/saaj-api.jar lib/activation.jar
+  lib/jaxb-api.jar lib/jsr173_1.0_api.jar lib/java-json.jar lib/asm-al
+ l-repackaged-2.2.0-b21.jar lib/cglib-2.2.0-b21.jar lib/guava-14.0.1.j
+ ar lib/hk2-api-2.2.0-b21.jar lib/hk2-locator-2.2.0-b21.jar lib/hk2-ut
+ ils-2.2.0-b21.jar lib/javax.annotation-api-1.2.jar lib/javax.inject-2
+ .2.0-b21.jar lib/javax.servlet-api-3.0.1.jar lib/jaxb-api-2.2.7.jar l
+ ib/jersey-entity-filtering-2.5.1.jar lib/jersey-media-moxy-2.5.1.jar 
+ lib/org.osgi.core-4.2.0.jar lib/osgi-resource-locator-1.0.1.jar lib/p
+ ersistence-api-1.0.jar lib/validation-api-1.1.0.Final.jar lib/jersey-
+ client.jar lib/jersey-common.jar lib/jersey-container-servlet.jar lib
+ /jersey-container-servlet-core.jar lib/jersey-server.jar lib/eclipsel
+ ink.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: galgeleg.GalgeKlient
+
