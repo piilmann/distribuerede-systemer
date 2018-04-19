@@ -45,7 +45,7 @@ public class GalgeKlientLogik {
 
         //Attempt to connect to game server        
         //URL url = new URL("http://localhost:4443/GalgeTest?WSDL");        //on local host
-        URL url = new URL("http://ubuntu4.saluton.dk:4443/GalgeTest?WSDL"); //on ubunto server
+        URL url = new URL("http://ubuntu4.saluton.dk:4481/GalgeTest?WSDL"); //on ubunto server
         QName qname = new QName("http://galgeleg/", "GalgelogikService");
         Service service = Service.create(url, qname);
         

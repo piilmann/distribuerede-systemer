@@ -18,7 +18,7 @@ public class GalgeServer {
     public static void main(String[] arg) throws Exception
     {
         GalgeI spil = new Galgelogik();
-        Endpoint.publish("http://[::]:4443/GalgeTest", spil);
+        Endpoint.publish("http://[::]:4481/GalgeTest", spil);
         System.out.println("GalgeSpilserver startet.");
     }
 }
